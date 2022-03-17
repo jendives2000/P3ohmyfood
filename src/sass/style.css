@@ -4,21 +4,57 @@
   padding: 0;
 }
 
-main {
+.header__logo {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  margin: 0 0 -0.6em 0;
+  padding: 2em 0;
 }
-@media (max-width: 1920px) {
-  main {
-    background-color: grey;
-  }
+.header__boite-rech-intro-bton__rech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 4.5em;
+  margin: 0.55em -0.6em -0.6em -0.6em;
+  box-shadow: 0 0.1em 0.4em 0.1em #61616169 inset;
 }
-@media (max-width: 880px) {
-  main {
-    background-color: black;
-  }
+.header__boite-rech-intro-bton__rech, .header__boite-rech-intro-bton__rech input {
+  background-color: #99e2d0;
+}
+.header__boite-rech-intro-bton i {
+  font-size: 1.4rem;
+  padding-right: 1em;
+}
+.header__boite-rech-intro-bton__rech input {
+  border-style: none;
+  max-width: 10em;
+}
+.header__boite-rech-intro-bton__rech input[placeholder] {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.header__boite-rech-intro-bton__rech input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.659);
+}
+.header__boite-rech-intro-bton__rech input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.659);
+}
+.header__boite-rech-intro-bton__rech input::placeholder {
+  color: rgba(0, 0, 0, 0.659);
+}
+.header__boite-rech-intro-bton__rech input:focus {
+  outline: none;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
 }
 
 h1 {
@@ -30,5 +66,5 @@ h2, h3, h4, p {
 }
 
 p {
-  font-weight: 1em;
+  font-weight: 1rem;
 }/*# sourceMappingURL=style.css.map */

@@ -20,14 +20,39 @@
 
 <body>
 
-  <header>
-    <nav class="header__nav">
+  <header class="header" >
+    <!-- LOGO DANS LE HEADER -->
+    <div class="header__logo">
+      <img 
+      src="/src/assets/logo/ohmyfood@2x.svg" alt="le logo de ohmyfood en noir et blanc" 
+      srcset="">
+    </div>
 
-    </nav>
+    <!-- BOITE INCLUANT : 
+    INPUT RECH + TEXTE INTRO + BOUTON EXPLO -->
+    <section class="header__boite-rech-intro-bton">
+      <!-- BOITE INPUT RECH -->
+      <div class="header__boite-rech-intro-bton__rech">
+        <!-- ICONE -->
+        <i 
+        class="
+        fas 
+        fa-map-marker-alt 
+        header__boite-rech-intro-bton__rech__i-geoloc
+        "></i>
+
+        <!-- TEXTE RESULTAT RECH -->
+        <input class="header__boite-rech-intro-bton__rech__input-rech" type="search" name="" 
+        id="#" 
+        placeholder="Paris, Belleville">
+
+      </div>
+
+    </section>
   </header>
 
   <main>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, velit. Consectetur voluptatem unde beatae quisquam numquam accusamus a. Dolorum reprehenderit, porro accusamus sunt non veniam. </p>
+    
 
   </main>
 
