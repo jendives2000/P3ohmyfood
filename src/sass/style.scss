@@ -28,6 +28,27 @@ $taille-pol: (
   flex-direction: $direction;
 }
 
+@mixin bton-fctnmt($minwidth) {
+  background-color: $couleur-sec-c;
+  border: none;
+  border-radius: 1em;
+  color: black;
+  margin-bottom: 1.4em;
+  padding: 1.7em 2em 1.7em 2em;
+  min-width: $minwidth;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: tailletext(h5);
+  font-weight: 700;
+  box-shadow: 
+      /*horizontal*/ 0 
+      /*vertical*/ 0.3em 
+      /*floutage*/ 0.6em 
+      /*decalage*/  
+      #61616136;
+}
+
 // POUR MEDIA QUERY : BREAKPOINT
 @mixin breakpoint($maxwidth) {
   @media (max-width: $maxwidth) {
@@ -35,6 +56,19 @@ $taille-pol: (
   }
 }
 
+// POLICES TEXTE
+h1 {
+  font-family: 'Shrikhand', cursive;
+}
+
+h2, h3, h4, h5, p {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-weight: tailletext(parag);
+}
+// 
 
 body {
   // background-color: blue;
@@ -52,22 +86,29 @@ body {
     padding: 2em 0;
     }
 
+    // BOITE INCLUANT : INPUT RECH + TEXTE INTRO + BOUTON EXPLO
     &__boite-rech-intro-bton {
       
+      // BOITE INPUT RECH
       &__rech {
           @include flexCenter(row);
           height: 4.5em;
-          margin: 0.55em -0.6em -0.6em -0.6em;
-          box-shadow: 0 0.1em 0.4em 0.1em #61616169 inset;
-        }
-
-        &__rech, &__rech input {
-          background-color: $couleur-ter;
+          // margin: -0 -0 -0 -0;
+          box-shadow: 
+          /*horizontal*/ 0 
+          /*vertical*/ 0.2em 
+          /*floutage*/ 0.4em 
+          /*decalage*/ -0.2em 
+          #61616169 inset;
         }
 
         i {
           font-size: tailletext(h4);
-          padding-right: 1em;
+          padding: 0 1em 0.1em 0;
+        }
+
+        &__rech, &__rech input {
+          background-color: $couleur-ter-b;
         }
       
         &__rech input {
@@ -81,21 +122,127 @@ body {
             }
 
             &::placeholder {
-              color: rgba(0, 0, 0, 0.659);
+              color: rgba(0, 0, 0, 0.734);
             }
 
             &:focus {
               outline: none;
             }
         }
+
+      // BOITE INTRO/TEXTE + BTON RECH
+      &__intro-bton {
+
+        padding: 3em 1.7em;
+        background-color: $couleur-sec-b;
+        text-align: center;
+
+        h2 {
+          font-size: tailletext(h2);
+        }
+
+        h3 {
+          font-size: tailletext(h4);
+          font-weight: 300;
+          padding: 0.8em 0 2em 0;
+        }
+
+        &__bton {
+          background-image: linear-gradient(360deg, $couleur-primaire, $couleur-sec);
+          border: none;
+          border-radius: 5em;
+          color: white;
+          margin-bottom: 1.4em;
+          padding: 1.1em 2em;
+          text-decoration: none;
+          display: inline-block;
+          font-family: 'Roboto', sans-serif;
+          font-size: tailletext(h5);
+          box-shadow: 
+          /*horizontal*/ 0 
+          /*vertical*/ 0.5em 
+          /*floutage*/ 0.6em 
+          /*decalage*/  
+          #61616146;
+        }
+      }
     }
 }
 
 
 
-main {
-  @include flexCenter(column);
+.main {
   background-color: #fff;
+
+  // TITRE FONCTIONNEMENT
+  h2 {
+    font-size: tailletext(h2);
+    margin: 2em 0 1.5em 1em;
+  }
+
+  // BOITE FONCTIONNEMENT AVEC 3 BOUTONS
+  &__aside {
+    @include flexCenter(column);
+    flex-wrap: wrap;
+
+    &__bton-chois {
+      @include flexCenter(row);
+      @include bton-fctnmt(18em);
+      
+      position: relative;
+      transition: 500ms;
+
+
+      &__pastille {
+        background-color: $couleur-primaire;
+        border: none;
+        border-radius: 5em;
+        color: black;
+        margin-bottom: 1.4em;
+        padding: 0.2em 0.5em;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Roboto', sans-serif;
+        font-size: tailletext(h5);
+        
+        position: absolute;
+        z-index: 1;
+        left: -0.8em;
+        bottom: 0.3em;
+
+        &__p {
+          color: white;
+          font-size: tailletext(h5);
+          font-weight: 400;
+        }
+      }
+
+      &:hover {
+        background-color: $couleur-sec-b;
+        transition: 500ms;
+      }
+
+      &__h5 {
+        text-align: left;
+        display: inline-block;
+      }
+
+      i {
+        padding: 0 1em 0 0;
+        font-size: tailletext(h3);
+        color: grey;
+        transition: 1s;
+
+        &:hover {
+          color: $couleur-primaire;
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+
+
+
   // Breakpoints
   
 
@@ -110,14 +257,3 @@ main {
 
 }
 
-h1 {
-  font-family: 'Shrikhand', cursive;
-}
-
-h2, h3, h4, p {
-  font-family: 'Roboto', sans-serif;
-}
-
-p {
-  font-weight: tailletext(parag);
-}
