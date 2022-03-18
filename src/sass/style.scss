@@ -28,6 +28,7 @@ $taille-pol: (
   flex-direction: $direction;
 }
 
+// STYLISATION DES BOUTONS FONCTIONNEMENT
 @mixin bton-fctnmt($minwidth) {
   background-color: $couleur-sec-c;
   border: none;
@@ -47,6 +48,15 @@ $taille-pol: (
       /*floutage*/ 0.6em 
       /*decalage*/  
       #61616136;
+}
+
+// STYLISATION DES IMAGES RESTAURANTS
+@mixin style-image($objectposition) {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+  object-position: $objectposition;
+  border-radius: 1.3em 1.3em 0 0;
 }
 
 // POUR MEDIA QUERY : BREAKPOINT
@@ -104,7 +114,11 @@ body {
 
         i {
           font-size: tailletext(h4);
-          padding: 0 1em 0.1em 0;
+          padding: 
+          /*TOP*/ 0
+          /*DRT*/ 1em
+          /*BAS*/ 0.1em
+          /*GCH*/ 0;
         }
 
         &__rech, &__rech input {
@@ -144,7 +158,11 @@ body {
         h3 {
           font-size: tailletext(h4);
           font-weight: 300;
-          padding: 0.8em 0 2em 0;
+          padding: 
+          /*TOP*/ 0.8em
+          /*DRT*/ 0
+          /*BAS*/ 2em
+          /*GCH*/ 0;
         }
 
         &__bton {
@@ -169,8 +187,6 @@ body {
     }
 }
 
-
-
 .main {
   background-color: #fff;
 
@@ -183,7 +199,14 @@ body {
   // BOITE FONCTIONNEMENT AVEC 3 BOUTONS
   &__aside {
     @include flexCenter(column);
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    gap: 3em;
+    padding: 0 3em;
+
+    // BREAKPOINT
+    @include breakpoint($mobile) {
+      gap: 0.5em;
+    }
 
     &__bton-chois {
       @include flexCenter(row);
@@ -192,6 +215,11 @@ body {
       position: relative;
       transition: 500ms;
 
+      // BREAKPOINT
+      @include breakpoint($mobile) {
+        @include bton-fctnmt(17em);
+  
+      }
 
       &__pastille {
         background-color: $couleur-primaire;
@@ -224,11 +252,22 @@ body {
 
       &__h5 {
         text-align: left;
+        font-size: tailletext(h5);
         display: inline-block;
+
+        // BREAKPOINT
+        @include breakpoint($mobile) {
+          font-size: tailletext(parag);
+    
+        }
       }
 
       i {
-        padding: 0 1em 0 0;
+        padding: 
+        /*TOP*/ 0
+        /*DRT*/ 1em
+        /*BAS*/ 0
+        /*GCH*/ 0;
         font-size: tailletext(h3);
         color: grey;
         transition: 1s;
@@ -241,19 +280,175 @@ body {
     }
   }
 
+  // BOITE 4 CARTES RESTAURANTS
+  &__sctn-4restos {
+    background-color: $couleur-sec-b;
+    padding: 
+    /*TOP*/ 0
+    /*DRT*/ 0
+    /*BAS*/ 4em
+    /*GCH*/ 0
+    ;
 
+    h2 {
+      font-size: tailletext(h2);
+      padding: 
+      /*TOP*/ 2em
+      /*DRT*/ 0
+      /*BAS*/ 0
+      /*GCH*/ 0;
+    }
 
-  // Breakpoints
-  
+    &__4cartes {
+      @include flexCenter(column);
+      gap: 1.8em;
+      width: 85%;
+      
+      margin: auto;
+      
+      &__carte {
+        background-color: #fff;
+        border-radius: 1.5em;
+        color: black;
+        text-decoration: none;
+        height: 19em;
+        width: 100%;
+        box-shadow: 
+        /*horizontal*/ 0 
+        /*vertical*/ 0.3em 
+        /*floutage*/ 0.6em 
+        /*decalage*/  
+        #61616136;
 
-  // @include breakpoint($desktop){
-    
-  // }
-  // @include breakpoint($tablette){
-    
-  // }
+        position: relative;
 
+        i {
+          font-size: tailletext(h2);
+          color: $couleur-sec-b;
+          position: absolute;
+          top: 72%;
+          left: 86%;
 
+          &:hover {
+            background: linear-gradient(360deg, $couleur-primaire, $couleur-sec);
+            background-clip: text;
+          }
+        }
+
+        &__vignette-nveau {
+          position: absolute;
+          left: 70%;
+          top: 6%;
+          border-radius: 0.1em;
+          width: 24%;
+          background-color: rgb(208, 208, 208);
+          padding: 0.5em;
+
+          font-size: tailletext(parag);
+          font-weight: 600;
+          font-family: 'Roboto', sans-serif;
+          text-align: center;
+          color: #916083;
+        }
+      }
+
+      img {
+        @include style-image(bottom center);
+      }
+
+      #img-noteench {
+        @include style-image(center -9em);
+
+      }
+
+      h3 {
+        padding: 
+        /*TOP*/ 0.7em
+        /*DRT*/ 0
+        /*BAS*/ 0.3em
+        /*GCH*/ 0.8em;
+        font-size: tailletext(h4);
+      }
+      
+      h4 {
+        padding: 
+        /*TOP*/ 0
+        /*DRT*/ 0
+        /*BAS*/ 1em
+        /*GCH*/ 0.8em;
+        font-size: tailletext(h4);
+        font-weight: 300;
+
+      }
+    }
+  }
 
 }
 
+.footer {
+  background-color: rgb(38, 38, 38);
+  padding: 2em 2em;
+  
+  // LOGO
+  h1 {
+    font-size: tailletext(h4);
+    font-weight: 400;
+    padding-bottom: 1.1em;
+    color: white;
+  }
+
+  &__wrappeur {
+    flex-flow: row wrap;
+    gap: 10em;
+
+    @include breakpoint($mobile) {
+      flex-flow: column nowrap;
+
+      .footer__wrappeur__boite-drte {
+        padding: 0;
+      }
+
+      .footer__wrappeur__boite-gche {
+        width: 15em;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    &__boite-gche {
+      width: 24em;
+      display: inline-block;
+
+      &__icone-text {
+        @include flexCenter(row);
+        width: 13em;
+        gap: 1em;
+        justify-content: flex-start;
+        padding-bottom: 0.6em;
+        font-weight: 500;
+      }
+    }
+
+    & > h1, i {
+      color: white;
+    }
+
+    & .fa-handshake {
+      transform: rotate(-45deg);
+      font-size: 0.70em;
+    }
+
+    &__boite-drte {
+      display: inline-block;
+
+      &__p {
+        font-weight: 300;
+        padding-bottom: 0.6em;
+      }
+    }
+}
+
+}
