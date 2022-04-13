@@ -28,6 +28,14 @@ $taille-pol: (
   flex-direction: $direction;
 }
 
+@mixin underline($width) {
+  background-color: $couleur-ter;
+  height: 0.3em;
+  // padding-top: 1em;
+  width: $width;
+  // margin-left: 2em;
+}
+
 
 // POUR MEDIA QUERY : BREAKPOINT
 @mixin breakpoint($maxwidth) {
@@ -109,6 +117,17 @@ p {
 
 }
 
+.flexeur-prix {
+  @include flexCenter(row);
+  justify-content: space-between;
+  // width: 100%;
+
+  & .prix {
+    font-weight: 900;
+    transition: 0.3s;
+  }
+}
+
 .main {
   background-color: $couleur-ter-b;
   // height: 100%;
@@ -136,4 +155,99 @@ p {
       } 
     }
   }
+
+  &__entrees {
+    background-color: $couleur-ter-b;
+    
+    &__titre {
+      padding: 0 0 0.5em 0;
+      margin-left: 2em;
+      
+      &__p {
+      font-weight: 300;
+      padding-bottom: 0.5em;
+      }  
+    
+      &__underline {
+        @include underline(4.5em);
+      }
+
+      &__plat {
+        background-color: #fff;
+        width: 95%;
+        border-radius: 1.3em;
+        padding: 1em 1.2em 1em 1em;
+        margin: 1.2em 0 0 0;
+        position: relative;
+        // z-index: ;
+        overflow: hidden;
+        // transition: 0.3s;
+
+        
+        
+        & .box-hover {
+          position: absolute;
+          top: 0;
+          // bottom: 50%;
+          left: 100%;
+          // right: 0;
+          // z-index: 0;
+          transition: 0.3s;
+
+          height: 100%;
+          border-radius: 0 1.3em 1.3em 0;
+          width: 80px;
+          background-color: $couleur-ter;
+
+          & i {
+            // padding-top: 50%;
+            // margin: auto;
+            // text-align: center;
+            padding: 0.85em 0.8em;
+            font-size: tailletext(h2);
+            color: #fff;
+            
+            
+          }
+
+          
+          
+        }
+
+        &:hover {
+          & .box-hover {
+
+            left: calc(100% - 80px);
+            cursor: pointer;
+            transition: 0.3s ease-in;
+            // right: 0;
+          }
+
+          & .flexeur-prix .prix {
+            padding-right: 80px;
+
+            transition: 0.3s ease-in;
+
+          }
+        }
+      }
+
+    }
+
+
+    
+  }
+
+  // BREAKPOINTS : MARGE GAUCHE SUR RES < MOBILE POUR LES TITRES DES ENTREES PLATS DESSERTS
+  &__entrees__titre {
+    @include breakpoint($mobile) {
+      // padding: 0 0 0.5em 1em;
+      margin-left: 1em;
+    }
+  }
+  
+
+
+
+  
 }
