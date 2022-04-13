@@ -72,6 +72,11 @@ p {
   font-weight: 900;
   transition: 0.3s;
 }
+.flexeur-prix p:nth-child(1) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .main {
   background-color: #b9f8eb;
