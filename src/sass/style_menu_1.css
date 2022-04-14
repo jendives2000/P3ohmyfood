@@ -114,6 +114,12 @@ p {
 .main .flexeur-wrap .main__entrees {
   width: 33%;
 }
+@media (max-width: 1073px) {
+  .main .flexeur-wrap .main__entrees {
+    padding-bottom: 2em;
+    width: 50%;
+  }
+}
 @media (max-width: 442px) {
   .main .flexeur-wrap {
     display: block;

@@ -172,6 +172,13 @@ p {
       width: 33%;
     }
 
+    @include breakpoint($tablette) {
+      & .main__entrees {
+        padding-bottom: 2em;
+        width: 50%;
+      }
+    }
+
     @include breakpoint($mobile) {
       display: block;
       padding-right: 0;
@@ -181,6 +188,7 @@ p {
         width: 100%;
       }
     }
+
   }
 
   // CATEGORIE DU MENU
