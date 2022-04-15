@@ -188,6 +188,19 @@ body {
           /*floutage*/ 0.6em 
           /*decalage*/  
           #61616146;
+          transition: 0.4s;
+
+          &:hover {
+            background-image: linear-gradient(360deg, #b37cf5, #ffa1e4);
+            box-shadow: 
+            /*horizontal*/ 0 
+            /*vertical*/ 0.5em 
+            /*floutage*/ 0.6em 
+            /*decalage*/  
+            #44444475;
+            transform: scale(1.2,1.2);
+            transition: 0.3s ease-in-out;
+          }
         }
       }
     }
@@ -348,6 +361,13 @@ body {
 
         position: relative;
 
+        &:hover {
+          & .img {
+            opacity: 0.8;
+            transition: 0.4s ease-in-out;
+          }
+        }
+
         @include breakpoint(845px) {
           // On passe les 2 colonnes en 1
           flex-basis: 100%;
@@ -391,6 +411,9 @@ body {
 
       img {
         @include style-image(bottom center);
+        transition: 0.3s;
+
+        
       }
 
       #img-noteench {

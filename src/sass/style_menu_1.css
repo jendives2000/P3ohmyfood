@@ -236,6 +236,13 @@ p {
   font-family: "Roboto", sans-serif;
   background-image: linear-gradient(360deg, #9356DC, #ff79da);
   box-shadow: 0 0.5em 0.6em #7e7e7e46;
+  transition: 0.4s;
+}
+.main .box-btn__cmder:hover {
+  background-image: linear-gradient(360deg, #b37cf5, #ffa1e4);
+  box-shadow: 0 0.5em 0.6em #44444475;
+  transform: scale(1.2, 1.2);
+  transition: 0.3s ease-in-out;
 }
 @media (max-width: 442px) {
   .main .box-btn__cmder {

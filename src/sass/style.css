@@ -84,6 +84,13 @@ p {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   box-shadow: 0 0.5em 0.6em #61616146;
+  transition: 0.4s;
+}
+.header__boite-rech-intro-bton__intro-bton__bton:hover {
+  background-image: linear-gradient(360deg, #b37cf5, #ffa1e4);
+  box-shadow: 0 0.5em 0.6em #44444475;
+  transform: scale(1.2, 1.2);
+  transition: 0.3s ease-in-out;
 }
 
 .main {
@@ -238,6 +245,10 @@ p {
   box-shadow: 0 0.3em 0.6em #61616136;
   position: relative;
 }
+.main__sctn-4restos__4cartes__carte:hover .img {
+  opacity: 0.8;
+  transition: 0.4s ease-in-out;
+}
 @media (max-width: 845px) {
   .main__sctn-4restos__4cartes__carte {
     flex-basis: 100%;
@@ -282,6 +293,7 @@ p {
   -o-object-position: bottom center;
      object-position: bottom center;
   border-radius: 1.3em 1.3em 0 0;
+  transition: 0.3s;
 }
 .main__sctn-4restos__4cartes #img-noteench {
   width: 100%;
