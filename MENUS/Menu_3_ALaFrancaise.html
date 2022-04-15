@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- POLICES GOOGLE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Shrikhand&display=swap" rel="stylesheet">
+  
+  <!-- CDN Icones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- LIEN VERS LE CSS -->
+  <link rel="stylesheet" href="/src/sass/style_menu_1.css">
+  
+  <title>Menu : À la française - Cité Rouge</title>
+</head>
+
+<body>
+  <header class="header">
+    <!-- BOITE TOUT EN HAUT AVEC FLECHE GCHE ET LOGO -->
+    <div class="header__flexbox">
+      <!-- FLECHE GAUCHE -->
+      <div class="header__flexbox__arrow">
+        <a href="/index.html"><i class="header__flexbox__arrow__i fa-solid fa-arrow-left"></i></a>
+      </div>
+
+      <!-- LOGO OHMYFOOD -->
+      <div class="header__flexbox__logo">
+        <img 
+        class="header__flexbox__logo__svg"
+        src="/src/assets/logo/ohmyfood@2x.svg" alt="le logo de ohmyfood en noir et blanc" 
+        srcset="">
+      </div>
+
+    </div>
+
+    <!-- IMAGE HERO -->
+    <div class="header__pic">
+      <img 
+        class="header__pic__img"
+        src="/src/assets/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="un plat gourmet sur une table au restaurant À la française" 
+        srcset="">
+      <div class="header__pic__top-bg"></div>
+    </div>
+  </header>
+
+  <!-- LISTE MENU -->
+  <main class="main">
+
+    <!-- TITRE RESTAURANT + COEUR -->
+    <div class="main__title">
+      <!-- TITRE -->
+      <h1 class="main__title__p">
+        À la française
+      </h1>
+
+      <!-- COEUR -->
+      <i class="main__title__i fa-solid fa-heart"></i>
+
+    </div>
+
+    <!-- BOX ENTREES PLATS DESSERT AVEC FLEX WRAP EN BREAKPOINT > MOBILE -->
+    <section class="flexeur-wrap">
+
+      <!-- BOX TITRE +
+        BOX ENTREES -->
+      <section class="main__entrees">
+        <!-- BOX AVEC TOUT -->
+        <div class="main__entrees__titre">
+      
+          <!-- TITRE ENTREES -->
+          <p class="main__entrees__titre__p">
+            ENTRÉES
+          </p>
+          <!-- SOULIGNAGE -->
+          <div class="main__entrees__titre__underline"></div>
+          <!-- CAPSULE 1 TARTARE -->
+          <div class="main__entrees__titre__plat">
+            <h3>
+              Tartare de poulpe acidulé
+            </h3>
+      
+            <!-- BOX HOVER AVEC COCHE SELECTION -->
+            <div class="box-hover">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <!-- SOUS TEXTE + PRIX EN FLEX -->
+            <div class="flexeur-prix">
+              <p>
+                Aux zestes d'orange
+              </p>
+              <p class="prix">
+                25€
+              </p>
+            </div>
+          </div>
+      
+          <!-- CAPSULE 2 VELOUTE-->
+          <div class="main__entrees__titre__plat">
+            <h3>
+              Velouté de légumes d'antan
+            </h3>
+      
+            <!-- BOX HOVER AVEC COCHE SELECTION -->
+            <div class="box-hover">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <!-- SOUS TEXTE + PRIX EN FLEX -->
+            <div class="flexeur-prix">
+              <p>
+                Carotte, panais, topinambour
+              </p>
+              <p class="prix">
+                35€
+              </p>
+            </div>
+          </div>
+      
+          <!-- CAPSULE 3 SOUPE -->
+          <div class="main__entrees__titre__plat">
+            <h3>
+              Soupe à l'oignon
+            </h3>
+      
+            <!-- BOX HOVER AVEC COCHE SELECTION -->
+            <div class="box-hover">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <!-- SOUS TEXTE + PRIX EN FLEX -->
+            <div class="flexeur-prix">
+              <p>
+                Revisitée
+              </p>
+              <p class="prix">
+                20€
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- BOX TITRE +
+        BOX PLATS -->
+      <section class="main__entrees">
+        <!-- BOX AVEC TOUT -->
+        <div class="main__entrees__titre">
+      
+          <!-- TITRE PLATS -->
+          <p class="main__entrees__titre__p">
+            PLATS
+          </p>
+          <!-- SOULIGNAGE -->
+          <div class="main__entrees__titre__underline"></div>
+          <!-- CAPSULE 4 COQUILLES -->
+          <div class="main__entrees__titre__plat">
+            <h3>
+              Coquilles Saint-Jacques
+            </h3>
+      
+            <!-- BOX HOVER AVEC COCHE SELECTION -->
+            <div class="box-hover">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <!-- SOUS TEXTE + PRIX EN FLEX -->
+            <div class="flexeur-prix">
+              <p>
+                Accompagnées d'une purée de panais
+              </p>
+              <p class="prix">
+                40€
+              </p>
+            </div>
+          </div>
+      
+          <!-- CAPSULE 5 MAGRET -->
+          <div class="main__entrees__titre__plat">
+            <h3>
+              Magret de canard
+            </h3>
+      
+            <!-- BOX HOVER AVEC COCHE SELECTION -->
+            <div class="box-hover">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <!-- SOUS TEXTE + PRIX EN FLEX -->
+            <div class="flexeur-prix">
+              <p>
+                Et parmentier de pommes de terre
+              </p>
+              <p class="prix">
+                35€
+              </p>
+            </div>
+          </div>
+      
+          <!-- CAPSULE 6 PIGEONNE -->
+          <div class="main__entrees__titre__plat">
+            <h3>
+              Pigeonneau d’Ille-et-Vilaine
+            </h3>
+      
+            <!-- BOX HOVER AVEC COCHE SELECTION -->
+            <div class="box-hover">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <!-- SOUS TEXTE + PRIX EN FLEX -->
+            <div class="flexeur-prix">
+              <p>
+                Sur son lit de gnocchis aux légumes
+              </p>
+              <p class="prix">
+                44€
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- BOX TITRE +
+        BOX DESSERTS -->
+      <section class="main__entrees">
+        <!-- BOX AVEC TOUT -->
+        <div class="main__entrees__titre">
+      
+          <!-- TITRE DESSERTS -->
+          <p class="main__entrees__titre__p">
+            DESSERTS
+          </p>
+          <!-- SOULIGNAGE -->
+          <div class="main__entrees__titre__underline"></div>
+          <!-- CAPSULE 7 PETALES -->
+          <div class="main__entrees__titre__plat">
+            <h3>
+              Pétales de violettes glacés
+            </h3>
+      
+            <!-- BOX HOVER AVEC COCHE SELECTION -->
+            <div class="box-hover">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <!-- SOUS TEXTE + PRIX EN FLEX -->
+            <div class="flexeur-prix">
+              <p>
+                Et purée de noisettes
+              </p>
+              <p class="prix">
+                18€
+              </p>
+            </div>
+          </div>
+      
+          <!-- CAPSULE 8 MACARON -->
+          <div class="main__entrees__titre__plat">
+            <h3>
+              Fondant au chocolat
+            </h3>
+      
+            <!-- BOX HOVER AVEC COCHE SELECTION -->
+            <div class="box-hover">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <!-- SOUS TEXTE + PRIX EN FLEX -->
+            <div class="flexeur-prix">
+              <p>
+                Revisité
+              </p>
+              <p class="prix">
+                22€
+              </p>
+            </div>
+          </div>
+      
+          <!-- CAPSULE 9 MOUSSE -->
+          <div class="main__entrees__titre__plat">
+            <h3>
+              Millefeuille croustillant
+            </h3>
+      
+            <!-- BOX HOVER AVEC COCHE SELECTION -->
+            <div class="box-hover">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <!-- SOUS TEXTE + PRIX EN FLEX -->
+            <div class="flexeur-prix">
+              <p>
+                Myrtilles et pâte d’amande
+              </p>
+              <p class="prix">
+                23€
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <div class="box-btn">
+      <a href="#" class="box-btn__cmder">
+        Commander
+      </a>
+    </div>
+
+
+  </main>
+
+  <footer class="footer">
+
+    <!-- LOGO -->
+    <h1>
+      ohmyfood
+    </h1>
+
+    <div class="footer__wrappeur">
+      
+      <!-- BOITE GAUCHE 2 LIENS GRAS + ICONES -->
+      <div class="footer__wrappeur__boite-gche">
+        
+        <!-- PROPOSER UN RESTO -->
+        <div class="footer__wrappeur__boite-gche__icone-text">
+          <!-- ICONE -->
+          <i class="fas fa-utensils"></i>
+          <!-- TEXTE PROPOSER -->
+          <p class="footer__wrappeur__boite-gche__icone-text__p-gras">
+            <a href="#">
+              Proposer un restaurant
+            </a>
+          </p>
+        </div>
+        <!-- DEVENIR PARTENR -->
+        <div class="footer__wrappeur__boite-gche__icone-text">
+          <!-- ICONE -->
+          <i class="fas fa-handshake"></i>
+          <!-- TEXTE PROPOSER -->
+          <p class="footer__wrappeur__boite-gche__icone-text__p-gras">
+            <a href="#">
+              Devenir partenaire
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- BOITE DROITE 2 LIENS -->
+      <div class="footer__wrappeur__boite-drte">
+        <p class="footer__wrappeur__boite-drte__p">
+          <a href="#">
+            Mentions légales
+          </a>
+        </p>
+        <p class="footer__wrappeur__boite-drte__p">
+          <a href="#">
+            Contact
+          </a>
+        </p>
+      </div>
+
+    </div>
+
+  </footer>
+</body>
+</html>
