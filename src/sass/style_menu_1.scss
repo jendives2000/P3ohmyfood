@@ -86,12 +86,19 @@ p {
 
     &__arrow__i {
       font-size: tailletext(h2);
+      transition: 0.5s;
+      
       // BREAKPOINT
       @include breakpoint($mobile) {
       // MAINTIENT LE LOGO AU CENTRE ET LA FLECHE A GAUCHE EN RES < MOBILE
       font-size: tailletext(h4);
-      
-    }
+
+      }
+    
+      &:hover {
+        transform: scale(1.5,1.5);
+        transition: 0.3s ease-in-out;
+      }
     }
     
   }

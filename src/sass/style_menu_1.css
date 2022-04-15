@@ -42,11 +42,16 @@ p {
 }
 .header__flexbox__arrow__i {
   font-size: 1.8rem;
+  transition: 0.5s;
 }
 @media (max-width: 442px) {
   .header__flexbox__arrow__i {
     font-size: 1.4rem;
   }
+}
+.header__flexbox__arrow__i:hover {
+  transform: scale(1.5, 1.5);
+  transition: 0.3s ease-in-out;
 }
 .header__pic__img {
   width: 100%;
