@@ -69,11 +69,17 @@ p {
     // flex-flow: row wrap;
     justify-content: flex-start;
     // LE GAP MAINTIENT LE LOGO AU CENTRE ET LA FLECHE A GAUCHE EN RES > TABLET
-    gap: 40%;
+    gap: calc(30% + 3em);
     padding: 2em 3em 1em 3em;
 
     // BREAKPOINT
-    @include breakpoint($mobile) {
+    @include breakpoint(755px) {
+      // MAINTIENT LE LOGO AU CENTRE ET LA FLECHE A GAUCHE EN RES < MOBILE
+      gap: 30%;
+    }
+
+    // BREAKPOINT
+    @include breakpoint(475px) {
       // MAINTIENT LE LOGO AU CENTRE ET LA FLECHE A GAUCHE EN RES < MOBILE
       gap: 15%;
     }
