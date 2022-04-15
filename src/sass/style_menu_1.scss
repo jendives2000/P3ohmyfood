@@ -69,7 +69,7 @@ p {
     // flex-flow: row wrap;
     justify-content: flex-start;
     // LE GAP MAINTIENT LE LOGO AU CENTRE ET LA FLECHE A GAUCHE EN RES > TABLET
-    gap: calc(30% + 3em);
+    gap: calc(38% + 3em);
     padding: 2em 3em 1em 3em;
 
     // BREAKPOINT
@@ -186,6 +186,7 @@ p {
 
     @include flexCenter(row);
     flex-wrap: wrap;
+    align-items: flex-start;
 
     & .main__entrees {
       width: 33%;
