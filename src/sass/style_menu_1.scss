@@ -85,14 +85,13 @@ p {
     }
 
     &__arrow__i {
-      font-size: tailletext(h2);
+      font-size: tailletext(h4);
       transition: 0.5s;
       
       // BREAKPOINT
       @include breakpoint($mobile) {
       // MAINTIENT LE LOGO AU CENTRE ET LA FLECHE A GAUCHE EN RES < MOBILE
       font-size: tailletext(h4);
-
       }
     
       &:hover {
@@ -104,13 +103,19 @@ p {
   }
 
   &__pic {
+    height: 23rem;
+    position: relative;
+
+    @include breakpoint($mobile) {
+      height: 16rem;  
+    }
+
     // IMAGE HERO
     &__img {
       width: 100%;
-      height: 16rem;
+      height: 100%;
       object-fit: cover;
       object-position: center center;
-      position: relative;
     }
 
     // PARTIE BASSE DE L'IMAGE HERO (HAUT DE PAGE AVEC COINS ARRONDIS)
@@ -119,7 +124,8 @@ p {
       width: 100%;
       height: 3rem;
       position: absolute;
-      top: 18.5rem;
+      bottom: 0;
+      // top: 100%;
       border-radius: 2.5em 2.5em 0 0;
     }
 

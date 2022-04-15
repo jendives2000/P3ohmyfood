@@ -41,7 +41,7 @@ p {
   }
 }
 .header__flexbox__arrow__i {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   transition: 0.5s;
 }
 @media (max-width: 442px) {
@@ -53,21 +53,29 @@ p {
   transform: scale(1.5, 1.5);
   transition: 0.3s ease-in-out;
 }
+.header__pic {
+  height: 23rem;
+  position: relative;
+}
+@media (max-width: 442px) {
+  .header__pic {
+    height: 16rem;
+  }
+}
 .header__pic__img {
   width: 100%;
-  height: 16rem;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
-  position: relative;
 }
 .header__pic__top-bg {
   background-color: #b9f8eb;
   width: 100%;
   height: 3rem;
   position: absolute;
-  top: 18.5rem;
+  bottom: 0;
   border-radius: 2.5em 2.5em 0 0;
 }
 
