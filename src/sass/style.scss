@@ -66,6 +66,12 @@ $taille-pol: (
   }
 }
 
+@mixin min-breakpoint($minwidth) {
+  @media (min-width: $minwidth) {
+    @content;
+  }
+}
+
 // POLICES TEXTE
 h1 {
   font-family: 'Shrikhand', cursive;
@@ -300,19 +306,39 @@ body {
     }
 
     &__4cartes {
-      @include flexCenter(column);
-      gap: 1.8em;
-      width: 85%;
+      // Pour obtenir un wrap qui plus bas donnera 2 colonne avec flexbasis
+      @include flexCenter(row);
+      flex-wrap: wrap;
       
+      gap: 1.8em;
+      // Pour aligner la bordure
+      width: 85%;
       margin: auto;
       
+      @include breakpoint($mobile) {
+        flex-flow: column nowrap;
+        width: 85%;
+
+        &__carte {
+          flex-basis: 0%;
+          width: 100%;
+        }
+
+        #img-noteench {
+          @include style-image(bottom center);
+          max-height: 233px;
+        }
+      }
+
       &__carte {
+        // Avec flexwrap ca donne les 2 colonnes
+        flex-basis: 48%;
+
         background-color: #fff;
         border-radius: 1.5em;
         color: black;
         text-decoration: none;
         height: 19em;
-        width: 100%;
         box-shadow: 
         /*horizontal*/ 0 
         /*vertical*/ 0.3em 
@@ -321,6 +347,17 @@ body {
         #61616136;
 
         position: relative;
+
+        @include breakpoint(845px) {
+          // On passe les 2 colonnes en 1
+          flex-basis: 100%;
+        }
+
+        @include min-breakpoint(1600px) {
+          // On passe les 4 colonnes en 1
+          flex-basis: 23%;
+        }
+        
 
         i {
           font-size: tailletext(h2);
@@ -357,8 +394,7 @@ body {
       }
 
       #img-noteench {
-        @include style-image(center -9em);
-
+        @include style-image(bottom -9em);
       }
 
       h3 {
