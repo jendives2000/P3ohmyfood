@@ -94,6 +94,63 @@ body {
     }
 }
 
+.spinner {
+  @include flexCenter(row);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 2;
+
+  // transition: opacity 0.75s, visibility 0.75s;
+  transition: 2s;
+
+
+  &::after {
+
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid $couleur-primaire;
+    border-top-color: $couleur-ter;
+    border-radius: 50%;
+    animation: loading 0.5s ease infinite;
+    
+  }
+}
+
+@keyframes loading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+.spinner--hidden {
+  opacity: 0;
+  visibility: hidden;
+  animation: disparait 3s ease;
+}
+
+@keyframes disparait {
+  0% { 
+    opacity: 1;
+    visibility: visible;
+   }
+  
+   50% { 
+    opacity: 1;
+    visibility: visible;
+   }
+
+  100% { 
+    opacity: 0;
+    visibility: hidden;
+   }
+}
+
 .header {
   
     &__logo {

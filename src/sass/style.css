@@ -16,6 +16,84 @@ p {
   font-weight: 1rem;
 }
 
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 2;
+  transition: 2s;
+}
+.spinner::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #9356DC;
+  border-top-color: #99e2d0;
+  border-radius: 50%;
+  -webkit-animation: loading 0.5s ease infinite;
+          animation: loading 0.5s ease infinite;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner--hidden {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-animation: disparait 3s ease;
+          animation: disparait 3s ease;
+}
+
+@-webkit-keyframes disparait {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes disparait {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 .header__logo {
   display: flex;
   justify-content: center;
