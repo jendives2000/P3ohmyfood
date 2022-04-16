@@ -122,9 +122,15 @@ p {
 }
 .main__title__i {
   font-size: 1.8rem;
-  color: #99e2d0;
+  background: linear-gradient(to top, #9356DC 50%, #ff79d923 50%);
+  background-size: 100% 200%;
+  background-position: top left;
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: all 0.5s ease-out;
 }
 .main__title__i:hover {
+  background-position: bottom left;
   color: #9356DC;
 }
 .main .flexeur-wrap {

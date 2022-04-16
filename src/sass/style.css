@@ -195,6 +195,7 @@ p {
 }
 .main__aside__bton-chois i:hover {
   color: #9356DC;
+  transform: scale(1, 1);
   transition: 0.5s;
 }
 .main__sctn-4restos {
@@ -266,11 +267,6 @@ p {
   top: 72%;
   left: 86%;
 }
-.main__sctn-4restos__4cartes__carte i:hover {
-  background: linear-gradient(360deg, #9356DC, #ff79da);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
 .main__sctn-4restos__4cartes__carte__vignette-nveau {
   position: absolute;
   left: 70%;
@@ -284,6 +280,18 @@ p {
   font-family: "Roboto", sans-serif;
   text-align: center;
   color: #916083;
+}
+.main__sctn-4restos__4cartes .hover-heart {
+  background: linear-gradient(to top, #9356DC 50%, #ff79d923 50%);
+  background-size: 100% 200%;
+  background-position: top left;
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: all 0.5s ease-out;
+}
+.main__sctn-4restos__4cartes .hover-heart:hover {
+  background-position: bottom left;
+  color: #9356DC;
 }
 .main__sctn-4restos__4cartes img {
   width: 100%;

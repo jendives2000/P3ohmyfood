@@ -177,11 +177,16 @@ p {
 
     &__i {
       font-size: tailletext(h2);
-      color: $couleur-ter;
+      background: linear-gradient(to top, $couleur-primaire 50%, $couleur-sec-b 50%);
+      background-size: 100% 200%;
+      background-position: top left;
+      background-clip: text;
+      transition: all .5s ease-out;
 
       &:hover {
+        background-position: bottom left;
         color: $couleur-primaire;
-      } 
+      }
     }
   }
 
