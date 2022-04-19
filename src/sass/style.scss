@@ -82,17 +82,10 @@ h2, h3, h4, h5, p {
 }
 
 p {
-  font-weight: tailletext(parag);
+  font-weight: 300;
 }
 // 
 
-body {
-  // background-color: blue;
-
-    #{&}__childelement {
-      // avec #{&} tout le css ici est aussi applique au parent ci-dessus
-    }
-}
 
 .spinner {
   @include flexCenter(row);
@@ -103,10 +96,6 @@ body {
   height: 100vh;
   background: white;
   z-index: 2;
-
-  // transition: opacity 0.75s, visibility 0.75s;
-  transition: 2s;
-
 
   &::after {
 
@@ -185,7 +174,7 @@ body {
         }
 
         &__rech, &__rech input {
-          background-color: $couleur-ter-b;
+          background-color: #EAEAEA;
         }
       
         &__rech input {
@@ -199,7 +188,7 @@ body {
             }
 
             &::placeholder {
-              color: rgba(0, 0, 0, 0.734);
+              color: #0e0e0e;
             }
 
             &:focus {
@@ -207,11 +196,15 @@ body {
             }
         }
 
+        &__rech i {
+          color: #3C3C3C;
+        }
+
       // BOITE INTRO/TEXTE + BTON RECH
       &__intro-bton {
 
         padding: 3em 1.7em;
-        background-color: $couleur-sec-b;
+        background-color: #F6F6F6;
         text-align: center;
 
         h2 {
@@ -280,7 +273,7 @@ body {
     padding: 0 3em;
 
     // BREAKPOINT
-    @include breakpoint($mobile) {
+    @include breakpoint(475px) {
       gap: 0.5em;
     }
 
@@ -360,7 +353,7 @@ body {
 
   // BOITE 4 CARTES RESTAURANTS
   &__sctn-4restos {
-    background-color: $couleur-sec-b;
+    background-color: #F6F6F6;
     padding: 
     /*TOP*/ 0
     /*DRT*/ 0
@@ -397,7 +390,7 @@ body {
         }
 
         #img-noteench {
-          @include style-image(bottom center);
+          @include style-image(0% 50%);
           max-height: 233px;
         }
       }
@@ -436,20 +429,6 @@ body {
           // On passe les 4 colonnes en 1
           flex-basis: 23%;
         }
-        
-
-        i {
-          font-size: tailletext(h2);
-          color: $couleur-sec-b;
-          position: absolute;
-          top: 72%;
-          left: 86%;
-          // position: relative;
-
-          
-        }
-
-        
 
         &__vignette-nveau {
           position: absolute;
@@ -465,14 +444,32 @@ body {
           font-family: 'Roboto', sans-serif;
           text-align: center;
           color: #916083;
+
+          @include breakpoint(385px) {
+            font-size: tailletext(0.3em);
+
+          }
         }
+        
+
+        i {
+          font-size: tailletext(h2);
+          color: $couleur-sec-b;
+          position: absolute;
+          top: 72%;
+          left: 86%;
+        }
+
+        
+
+        
       }
 
       & .hover-heart {
-        background: linear-gradient(to top, $couleur-primaire 50%, $couleur-sec-b 50%);
+        background: linear-gradient(to top, $couleur-primaire 50%, $couleur-sec-b 50%) text;
         background-size: 100% 200%;
         background-position: top left;
-        background-clip: text;
+        // background-clip: text;
         transition: all .5s ease-out;
 
         &:hover {
@@ -482,14 +479,12 @@ body {
       }
 
       img {
-        @include style-image(bottom center);
+        @include style-image(40% 50%);
         transition: 0.3s;
-
-        
       }
 
       #img-noteench {
-        @include style-image(bottom -9em);
+        @include style-image(0% 50%);
       }
 
       h3 {

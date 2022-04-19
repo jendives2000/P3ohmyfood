@@ -31,11 +31,8 @@ $taille-pol: (
 @mixin underline($width) {
   background-color: $couleur-ter;
   height: 0.3em;
-  // padding-top: 1em;
   width: $width;
-  // margin-left: 2em;
 }
-
 
 // POUR MEDIA QUERY : BREAKPOINT
 @mixin breakpoint($maxwidth) {
@@ -55,7 +52,7 @@ h2, h3, h4, h5, p {
 }
 
 p {
-  font-weight: tailletext(parag);
+  font-weight: 300;
 }
 
 //  BODY
@@ -84,6 +81,7 @@ p {
       gap: 15%;
     }
 
+    // LA FLECHE DU HAUT POUR RETOUR HOMEPAGE
     &__arrow__i {
       font-size: tailletext(h4);
       transition: 0.5s;
@@ -102,6 +100,7 @@ p {
     
   }
 
+  // PHOTO MENU HERO
   &__pic {
     height: 32rem;
     position: relative;
@@ -133,10 +132,7 @@ p {
       bottom: 0;
       border-radius: 2.5em 2.5em 0 0;
     }
-
   }
-
-
 }
 
 .flexeur-prix {
@@ -161,10 +157,10 @@ p {
 
 .main {
   background-color: $couleur-ter-b;
-  margin-top: -0.1em;
 
   // NOM RESTO
   &__title {
+
     @include flexCenter(row);
     padding: 0 1em 2em 2em;
     justify-content: flex-start;
@@ -177,7 +173,7 @@ p {
 
     &__i {
       font-size: tailletext(h2);
-      background: linear-gradient(to top, $couleur-primaire 50%, $couleur-sec-b 50%);
+      background: linear-gradient(to top, $couleur-primaire 50%, $couleur-sec-b 50%) text;
       background-size: 100% 200%;
       background-position: top left;
       background-clip: text;
@@ -188,6 +184,7 @@ p {
         color: $couleur-primaire;
       }
     }
+
   }
 
   // BOX ENTREES PLATS DESSERT AVEC FLEX WRAP EN BREAKPOINT > MOBILE
@@ -200,8 +197,22 @@ p {
 
     & .main__entrees {
       width: 33%;
-    }
 
+      // ANIMATION EN LOADING
+      animation: glisse-opac 0.5s ease-in;
+      transform: translateY(+20%);
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes glisse-opac {
+      0% { transform: translateY(+20%);
+      opacity: 0; }
+      100% { transform: translateY(0%);
+      opacity: 1; }
+    }
+    
+    // PASSE LES COLONNES DE 3 A 2
     @include breakpoint($tablette) {
       & .main__entrees {
         padding-bottom: 2em;
@@ -209,6 +220,7 @@ p {
       }
     }
 
+    // PASSE LES COLONNES A 1 COLONNE
     @include breakpoint($mobile) {
       display: block;
       padding-right: 0;
@@ -218,7 +230,6 @@ p {
         width: 100%;
       }
     }
-
   }
 
   // CATEGORIE DU MENU
@@ -232,13 +243,15 @@ p {
       &__p {
       font-weight: 300;
       padding-bottom: 0.5em;
+      font-size: tailletext(parag)
       }  
     
+      // TRAIT SOUS CATEGORIES (ENTREES PLATS DESSERTS)
       &__underline {
         @include underline(6em);
       }
 
-      // CAPSULE 1 FRICASSEE
+      // CAPSULE 
       &__plat {
         background-color: #fff;
         border-radius: 1.3em;
@@ -304,6 +317,7 @@ p {
     }
   }
 
+  // BOUTON COMMANDER
   & .box-btn {
     @include flexCenter(row);
 
@@ -341,6 +355,7 @@ p {
         transition: 0.3s ease-in-out;
       }
 
+      // DIMINUE LE PADDIGN SUR LE BAS DE LA PAGE
       @include breakpoint($mobile) {
         margin: 0 0 3em 0;
       }
@@ -372,6 +387,7 @@ p {
     flex-flow: row wrap;
     gap: 10em;
 
+    // PASSE LE TOUT EN 1 COLONNE
     @include breakpoint($mobile) {
       flex-flow: column nowrap;
 
@@ -420,6 +436,6 @@ p {
         padding-bottom: 0.6em;
       }
     }
+  }
 }
 
-}
