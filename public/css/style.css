@@ -316,6 +316,12 @@ p {
   text-align: center;
   color: #916083;
 }
+@media (max-width: 385px) {
+  .main__sctn-4restos__4cartes__carte__vignette-nveau {
+    padding: 0.6em;
+    width: 27%;
+  }
+}
 .main__sctn-4restos__4cartes .box-heart {
   background-color: transparent;
   border: none;

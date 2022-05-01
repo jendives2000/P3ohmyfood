@@ -440,6 +440,8 @@ p {
 
           @include breakpoint(385px) {
             font-size: tailletext(0.3em);
+            padding: 0.6em;
+            width: 27%;
           }
         }
       }
