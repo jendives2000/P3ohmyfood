@@ -292,10 +292,6 @@ p {
   box-shadow: 0 0.3em 0.6em #61616136;
   position: relative;
 }
-.main__sctn-4restos__4cartes__carte:hover .img {
-  opacity: 0.8;
-  transition: 0.4s ease-in-out;
-}
 @media (max-width: 845px) {
   .main__sctn-4restos__4cartes__carte {
     flex-basis: 100%;
@@ -320,22 +316,36 @@ p {
   text-align: center;
   color: #916083;
 }
-.main__sctn-4restos__4cartes__carte i {
+.main__sctn-4restos__4cartes .box-heart {
+  background-color: transparent;
+  border: none;
+  padding: 0;
   font-size: 1.8rem;
-  color: #ff79d923;
   position: absolute;
   top: 72%;
   left: 86%;
 }
-.main__sctn-4restos__4cartes .hover-heart {
-  background: linear-gradient(to top, #9356DC 50%, #ff79d923 50%) text;
-  background-size: 100% 200%;
-  background-position: top left;
-  transition: all 0.5s ease-out;
+.main__sctn-4restos__4cartes .box-heart:hover > .heart-like::before {
+  content: "\f004";
+  font-weight: bold;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#ff79da));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: heart-full;
+  animation-duration: 1s;
 }
-.main__sctn-4restos__4cartes .hover-heart:hover {
-  background-position: bottom left;
-  color: #9356DC;
+.main__sctn-4restos__4cartes .heart-like {
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes heart-full {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .main__sctn-4restos__4cartes img {
   width: 100%;

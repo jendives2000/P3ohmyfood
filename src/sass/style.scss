@@ -413,13 +413,6 @@ p {
 
         position: relative;
 
-        &:hover {
-          & .img {
-            opacity: 0.8;
-            transition: 0.4s ease-in-out;
-          }
-        }
-
         @include breakpoint(845px) {
           // On passe les 2 colonnes en 1
           flex-basis: 100%;
@@ -447,34 +440,48 @@ p {
 
           @include breakpoint(385px) {
             font-size: tailletext(0.3em);
-
           }
         }
-        
-
-        i {
-          font-size: tailletext(h2);
-          color: $couleur-sec-b;
-          position: absolute;
-          top: 72%;
-          left: 86%;
-        }
-
-        
-
-        
       }
 
-      & .hover-heart {
-        background: linear-gradient(to top, $couleur-primaire 50%, $couleur-sec-b 50%) text;
-        background-size: 100% 200%;
-        background-position: top left;
-        // background-clip: text;
-        transition: all .5s ease-out;
+      & .box-heart {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        font-size: tailletext(h2);
+        position: absolute;
+        top: 72%;
+        left: 86%;
+      }
 
-        &:hover {
-          background-position: bottom left;
-          color: $couleur-primaire;
+      & .box-heart:hover > .heart-like::before {
+        // Pour avoir le coeur plein
+        content: "\f004";
+        
+        // Pour remplir le coeur
+        font-weight: bold;
+        
+        // Pour le dégradé
+        background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#ff79da));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        animation-name: heart-full;
+        animation-duration: 1s;
+      }
+
+      & .heart-like {
+        background: black;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @keyframes heart-full {
+        0% {
+          opacity: 0.2
+        }
+        100% {
+          opacity: 1
         }
       }
 
